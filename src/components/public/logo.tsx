@@ -24,7 +24,7 @@ export function Logo({ className, src = "/logo.jpg" }: Props) {
         src={src}
         alt="PRVS Business — Think Different, Start a Business"
         onError={() => setErrored(true)}
-        className={cn("h-9 lg:h-11 w-auto", className)}
+        className={cn("h-10 sm:h-11 lg:h-12 w-auto", className)}
       />
     );
   }
@@ -35,7 +35,7 @@ export function Logo({ className, src = "/logo.jpg" }: Props) {
       viewBox="0 0 280 64"
       role="img"
       aria-label="PRVS Business"
-      className={cn("h-9 lg:h-11 w-auto", className)}
+      className={cn("h-10 sm:h-11 lg:h-12 w-auto", className)}
     >
       {/* Orange flame */}
       <path

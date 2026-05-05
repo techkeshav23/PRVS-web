@@ -38,28 +38,32 @@ export function TopBar() {
   return (
     <div className="bg-brand-700 text-white text-xs hidden md:block">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-10 gap-6">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.75} />
-              <span>Pandav Nagar, Delhi — 110092</span>
-            </span>
-            <span className="flex items-center gap-2 hidden lg:flex">
+        <div className="flex items-center justify-between h-9 lg:h-10 gap-4 lg:gap-6">
+          {/* Left: contact info */}
+          <div className="flex items-center gap-4 lg:gap-6 min-w-0">
+            <a
+              href={`tel:${phone}`}
+              className="flex items-center gap-2 hover:text-accent-300 transition-colors flex-shrink-0"
+            >
               <Phone className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.75} />
-              <a href={`tel:${phone}`} className="tabular hover:text-accent-300 transition-colors">
-                {phone}
-              </a>
-            </span>
-          </div>
-          <div className="flex items-center gap-6">
+              <span className="tabular">{phone}</span>
+            </a>
             <a
               href={`mailto:${email}`}
-              className="flex items-center gap-2 hover:text-accent-300 transition-colors"
+              className="hidden lg:flex items-center gap-2 hover:text-accent-300 transition-colors min-w-0"
             >
               <Mail className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.75} />
-              <span className="break-all">{email}</span>
+              <span className="truncate">{email}</span>
             </a>
-            <div className="flex items-center gap-3">
+          </div>
+
+          {/* Right: location + social */}
+          <div className="flex items-center gap-4 lg:gap-6 min-w-0">
+            <span className="hidden lg:flex items-center gap-2 min-w-0">
+              <MapPin className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.75} />
+              <span className="truncate">Pandav Nagar, Delhi</span>
+            </span>
+            <div className="flex items-center gap-3 flex-shrink-0">
               {[
                 { Icon: FacebookIcon, href: "#", label: "Facebook" },
                 { Icon: InstagramIcon, href: "#", label: "Instagram" },

@@ -33,7 +33,7 @@ const defaultSettings: ISettings = {
   heroSubtitle:
     "Company registration, GST, ITR, Trademark — all under one roof. Affordable. Reliable. Fast.",
   heroImage:
-    "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1600&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=80&auto=format&fit=crop&crop=focalpoint&fp-x=0.7",
   aboutShort:
     "PRVS Business is your trusted partner for company registration and business compliance in India.",
   aboutFull: "",

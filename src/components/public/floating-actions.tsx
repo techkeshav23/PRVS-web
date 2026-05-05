@@ -17,8 +17,11 @@ export function FloatingActions() {
     "Hi PRVS Business, I would like to know more about your services."
   );
 
-  const safeAreaStyle = {
-    marginBottom: "max(0px, env(safe-area-inset-bottom))",
+  // On mobile (< lg): bottom nav is 64px tall + safe-area-inset.
+  // We position above bottom nav: 64 + 8 (gap) = 72px from physical bottom.
+  // calc(env(safe-area-inset-bottom) + 4.5rem) handles iPhone notch.
+  const mobileBottomStyle = {
+    bottom: "calc(env(safe-area-inset-bottom, 0px) + 4.5rem)",
   };
 
   return (
@@ -27,8 +30,8 @@ export function FloatingActions() {
       <a
         href={`tel:${phone}`}
         aria-label="Call PRVS Business"
-        style={safeAreaStyle}
-        className="group fixed left-4 sm:left-5 bottom-24 lg:bottom-6 z-30 w-13 h-13 rounded-full bg-brand-700 hover:bg-brand-800 text-white flex items-center justify-center shadow-xl shadow-brand-900/25 hover:scale-105 transition-all"
+        style={mobileBottomStyle}
+        className="group fixed left-3 sm:left-5 lg:!bottom-6 z-30 w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-brand-700 hover:bg-brand-800 text-white flex items-center justify-center shadow-xl shadow-brand-900/25 hover:scale-105 transition-all"
       >
         <Phone className="w-5 h-5" strokeWidth={2} />
         <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-ink-950 text-white text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden lg:block">
@@ -42,8 +45,8 @@ export function FloatingActions() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        style={safeAreaStyle}
-        className="group fixed right-4 sm:right-5 bottom-24 lg:bottom-6 z-30 w-13 h-13 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-xl shadow-black/15 hover:scale-105 transition-all"
+        style={mobileBottomStyle}
+        className="group fixed right-3 sm:right-5 lg:!bottom-6 z-30 w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center shadow-xl shadow-black/15 hover:scale-105 transition-all"
       >
         <WhatsAppGlyph className="w-6 h-6" />
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-ink-950 text-white text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden lg:block">

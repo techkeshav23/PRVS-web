@@ -86,7 +86,7 @@ export function ConsultationDialog({
               onClick={() => setOpen(false)}
               aria-hidden="true"
             />
-            <div className="relative w-full sm:max-w-sm bg-surface border border-border shadow-2xl shadow-ink-950/30 max-h-[92vh] overflow-y-auto animate-fade-up">
+            <div className="relative w-full sm:max-w-md bg-surface border border-border shadow-2xl shadow-ink-950/30 max-h-[92vh] overflow-y-auto animate-fade-up">
               <button
                 type="button"
                 onClick={() => setOpen(false)}

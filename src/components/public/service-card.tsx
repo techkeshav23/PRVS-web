@@ -27,21 +27,21 @@ export function ServiceCard({
       href={`/services/${slug}`}
       className="group relative bg-card border border-border hover:border-brand-950 transition-colors p-6 sm:p-7 flex flex-col h-full"
     >
-      <div className="flex items-start justify-between mb-6">
-        <div className="w-11 h-11 border border-border group-hover:border-accent-500 group-hover:bg-accent-500 group-hover:text-white flex items-center justify-center text-brand-950 transition-colors">
+      <div className="flex items-start justify-between mb-5 sm:mb-6 gap-3">
+        <div className="w-10 h-10 sm:w-11 sm:h-11 border border-border group-hover:border-accent-500 group-hover:bg-accent-500 group-hover:text-white flex items-center justify-center text-brand-950 transition-colors flex-shrink-0">
           <DynamicIcon name={icon} className="w-5 h-5" />
         </div>
         {typeof index === "number" && (
-          <span className="text-[10px] uppercase tracking-widest text-foreground-muted tabular">
+          <span className="hidden lg:inline-block text-[10px] uppercase tracking-widest text-foreground-muted tabular flex-shrink-0">
             {String(index + 1).padStart(2, "0")} / Service
           </span>
         )}
       </div>
 
-      <h3 className="font-display text-xl text-brand-950 leading-tight mb-3 line-clamp-2 min-h-[3rem]">
+      <h3 className="font-display text-lg sm:text-xl text-brand-950 leading-tight mb-2 sm:mb-3 line-clamp-2 sm:min-h-[3rem]">
         {title}
       </h3>
-      <p className="text-sm text-foreground-muted leading-relaxed mb-6 line-clamp-3 min-h-[3.5rem]">
+      <p className="text-sm text-foreground-muted leading-relaxed mb-5 sm:mb-6 line-clamp-3 sm:min-h-[3.5rem]">
         {shortDescription}
       </p>
 

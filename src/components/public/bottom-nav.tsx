@@ -29,19 +29,19 @@ export function BottomNav() {
               <Link
                 href={href}
                 className={cn(
-                  "h-full flex flex-col items-center justify-center gap-1 transition-colors relative px-1",
+                  "h-full flex flex-col items-center justify-center gap-0.5 transition-colors relative px-1",
                   isActive
                     ? "text-brand-950"
                     : "text-foreground-muted hover:text-brand-950"
                 )}
               >
                 {isActive && (
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-accent-500" />
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 w-7 h-0.5 bg-accent-500" />
                 )}
-                <Icon className="w-5 h-5" strokeWidth={isActive ? 2 : 1.5} />
+                <Icon className="w-[18px] h-[18px] flex-shrink-0" strokeWidth={isActive ? 2 : 1.5} />
                 <span
                   className={cn(
-                    "text-[11px] leading-none truncate max-w-full",
+                    "text-[10px] xs:text-[11px] leading-none truncate max-w-full",
                     isActive ? "font-semibold" : "font-normal"
                   )}
                 >

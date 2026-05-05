@@ -52,13 +52,13 @@ export default async function HomePage() {
           </div>
         )}
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 lg:pt-20 lg:pb-24">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-24">
           <div className="max-w-2xl text-white animate-fade-up">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-accent-300 font-semibold mb-4">
-              <span className="inline-block w-8 h-px bg-accent-400 align-middle mr-3" />
-              India&apos;s Largest Registration Platform
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-accent-300 font-semibold mb-3 sm:mb-4 flex items-center">
+              <span className="inline-block w-6 sm:w-8 h-px bg-accent-400 mr-3 flex-shrink-0" />
+              <span>India&apos;s Largest Registration Platform</span>
             </p>
-            <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight">
+            <h1 className="font-display text-[2rem] xs:text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.08] tracking-tight break-words">
               {settings.heroTitle}
               {settings.heroTitleAccent && (
                 <>
@@ -73,23 +73,23 @@ export default async function HomePage() {
             <p className="text-sm sm:text-base text-cream-100/85 leading-relaxed mt-4 max-w-xl">
               {settings.heroSubtitle}
             </p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-6">
+            <div className="flex flex-col xs:flex-row xs:flex-wrap xs:items-center gap-3 xs:gap-x-5 xs:gap-y-3 mt-6">
               <ConsultationDialog
                 services={services.map((s) => ({ title: s.title, slug: s.slug }))}
                 buttonLabel="Free Consultation"
                 buttonVariant="secondary"
                 buttonSize="default"
-                buttonClassName="gap-2"
+                buttonClassName="gap-2 w-full xs:w-auto justify-center"
               />
               <a
                 href={`tel:${settings.contactPhone}`}
                 className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent-300 underline underline-offset-4 decoration-1 decoration-accent-400"
               >
-                <Phone className="w-4 h-4" strokeWidth={1.5} />
+                <Phone className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
                 <span className="tabular">{settings.contactPhone}</span>
               </a>
             </div>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 text-xs text-cream-100/70">
+            <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-2 mt-6 text-xs text-cream-100/70">
               {[
                 "100% Online",
                 "CA / CS Reviewed",
@@ -128,14 +128,14 @@ export default async function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-20 lg:py-28 bg-cream">
+      <section className="py-16 sm:py-20 lg:py-28 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 lg:mb-14">
             <div className="max-w-2xl">
-              <p className="divider-gold text-[11px] uppercase tracking-[0.25em] text-accent-700 font-semibold mb-5">
+              <p className="divider-gold text-[11px] uppercase tracking-[0.25em] text-accent-700 font-semibold mb-4 sm:mb-5">
                 Practice Areas
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-950 leading-[1.1]">
+              <h2 className="font-display text-[1.75rem] sm:text-4xl lg:text-5xl text-brand-950 leading-[1.1]">
                 Comprehensive compliance, <em className="text-brand-700 not-italic">elegantly handled</em>.
               </h2>
             </div>
@@ -172,23 +172,23 @@ export default async function HomePage() {
       </section>
 
       {/* APPROACH */}
-      <section className="py-20 lg:py-28 bg-brand-950 text-cream-100">
+      <section className="py-16 sm:py-20 lg:py-28 bg-brand-950 text-cream-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="divider-gold text-[11px] uppercase tracking-[0.25em] text-accent-300 font-semibold mb-6">
+              <p className="divider-gold text-[11px] uppercase tracking-[0.25em] text-accent-300 font-semibold mb-5">
                 Our Approach
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
+              <h2 className="font-display text-[1.75rem] sm:text-4xl lg:text-5xl leading-[1.1]">
                 Built on three principles we refuse to compromise.
               </h2>
-              <p className="text-cream-200/70 mt-6 leading-relaxed">
+              <p className="text-cream-200/70 text-sm sm:text-base mt-5 leading-relaxed">
                 Every filing, every consultation, every recommendation passes through this filter.
                 It&apos;s why founders trust us with their most important paperwork.
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-medium text-accent-300 hover:text-accent-200 mt-8 underline underline-offset-4 decoration-1"
+                className="inline-flex items-center gap-2 text-sm font-medium text-accent-300 hover:text-accent-200 mt-6 underline underline-offset-4 decoration-1"
               >
                 Read our story <ArrowUpRight className="w-4 h-4" strokeWidth={1.5} />
               </Link>
@@ -213,12 +213,12 @@ export default async function HomePage() {
                     desc: "We measure success not by transactions but by clients who return year after year. 89% of our clients stay with us beyond their first engagement.",
                   },
                 ].map((p) => (
-                  <li key={p.n} className="py-7 first:pt-0 grid grid-cols-12 gap-6">
-                    <span className="col-span-2 font-display text-3xl text-accent-300 tabular">
+                  <li key={p.n} className="py-6 sm:py-7 first:pt-0 flex gap-4 sm:gap-6">
+                    <span className="font-display text-2xl sm:text-3xl text-accent-300 tabular flex-shrink-0 leading-none pt-1 w-10 sm:w-12">
                       {p.n}
                     </span>
-                    <div className="col-span-10">
-                      <h3 className="font-display text-xl mb-2">{p.title}</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-display text-lg sm:text-xl mb-2">{p.title}</h3>
                       <p className="text-cream-200/70 text-sm leading-relaxed">{p.desc}</p>
                     </div>
                   </li>
@@ -230,28 +230,20 @@ export default async function HomePage() {
       </section>
 
       {/* STATS */}
-      <section className="py-16 bg-surface border-y border-border">
+      <section className="py-12 sm:py-16 bg-surface border-y border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {[
               { end: settings.stats.clientsServed, label: "Clients Served", suffix: "+" },
-              { end: settings.stats.servicesCompleted, label: "Filings Completed", suffix: "+" },
-              { end: settings.stats.yearsExperience, label: "Years of Service", suffix: "" },
+              { end: settings.stats.servicesCompleted, label: "Filings Done", suffix: "+" },
+              { end: settings.stats.yearsExperience, label: "Years Strong", suffix: "" },
               { end: 98, label: "On-Time Delivery", suffix: "%" },
-            ].map((stat, i) => (
-              <div
-                key={stat.label}
-                className={
-                  "text-center py-4 px-2 " +
-                  (i < 3 ? "lg:border-r border-border" : "") +
-                  (i === 0 || i === 1 ? " border-r border-border " : "") +
-                  (i < 2 ? " border-b lg:border-b-0 border-border" : "")
-                }
-              >
-                <div className="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-700 tabular">
+            ].map((stat) => (
+              <div key={stat.label} className="bg-surface text-center py-6 px-3">
+                <div className="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-700 tabular leading-none">
                   <StatsCounter end={stat.end} suffix={stat.suffix} />
                 </div>
-                <p className="text-[11px] uppercase tracking-widest text-foreground-muted mt-2">
+                <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-foreground-muted mt-3">
                   {stat.label}
                 </p>
               </div>
@@ -299,30 +291,30 @@ export default async function HomePage() {
       )}
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-cream">
+      <section className="py-16 sm:py-20 lg:py-28 bg-cream">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-950 text-cream-100 p-10 sm:p-14 lg:p-20 text-center max-w-4xl mx-auto">
-            <p className="divider-gold inline-block text-[11px] uppercase tracking-[0.25em] text-accent-300 font-semibold mb-6">
+          <div className="bg-brand-950 text-cream-100 p-8 sm:p-12 lg:p-20 text-center max-w-4xl mx-auto">
+            <p className="divider-gold inline-block text-[11px] uppercase tracking-[0.25em] text-accent-300 font-semibold mb-5">
               Begin Today
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
+            <h2 className="font-display text-[1.75rem] sm:text-4xl lg:text-5xl leading-[1.1]">
               Your business deserves a partner, not a portal.
             </h2>
-            <p className="text-cream-200/70 leading-relaxed mt-6 max-w-2xl mx-auto">
+            <p className="text-cream-200/70 text-sm sm:text-base leading-relaxed mt-5 max-w-2xl mx-auto">
               Schedule a free consultation. No hard sell, no obligation — just clear advice from
               people who&apos;ve done this thousands of times.
             </p>
-            <div className="flex flex-wrap gap-4 mt-10 justify-center">
-              <Link href="/contact">
-                <Button size="lg" variant="secondary">
+            <div className="flex flex-col sm:flex-row gap-3 mt-8 justify-center">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                   Book Free Consultation
                 </Button>
               </Link>
-              <a href={`tel:${settings.contactPhone}`}>
+              <a href={`tel:${settings.contactPhone}`} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-brand-950"
+                  className="w-full sm:w-auto border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-brand-950"
                 >
                   <Phone className="w-4 h-4" /> Call Now
                 </Button>

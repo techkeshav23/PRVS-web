@@ -34,10 +34,10 @@ function YoutubeIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   return (
-    <footer className="bg-brand-950 text-cream-200 pt-20 pb-24 lg:pb-12 mt-24 relative">
+    <footer className="bg-brand-950 text-cream-200 pt-16 sm:pt-20 pb-24 lg:pb-12 mt-16 sm:mt-24 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="grid gap-10 sm:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-accent-500 flex items-center justify-center font-display text-2xl font-bold text-brand-950">
