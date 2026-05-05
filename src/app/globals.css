@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+
+  --breakpoint-xs: 30rem;
+
+  /* Teal — Primary brand (matches PRVS Business identity) */
+  --color-brand-50: #effafc;
+  --color-brand-100: #d6f1f5;
+  --color-brand-200: #b1e3eb;
+  --color-brand-300: #7cccd9;
+  --color-brand-400: #43afc0;
+  --color-brand-500: #2693a6;
+  --color-brand-600: #1d7a8c;
+  --color-brand-700: #1c6373;
+  --color-brand-800: #1c505d;
+  --color-brand-900: #1b424f;
+  --color-brand-950: #0a2730;
+
+  /* Ink — Near-black for premium CTAs */
+  --color-ink-50: #f4f5f6;
+  --color-ink-100: #e3e6e8;
+  --color-ink-700: #2a3338;
+  --color-ink-800: #1a2126;
+  --color-ink-900: #131a1f;
+  --color-ink-950: #0a1014;
+
+  /* Accent — Warm coral/orange (matches logo swoosh) */
+  --color-accent-50: #fef4f1;
+  --color-accent-100: #fde6df;
+  --color-accent-200: #fac8b8;
+  --color-accent-300: #f5a085;
+  --color-accent-400: #ee7551;
+  --color-accent-500: #e6552c;
+  --color-accent-600: #d33f17;
+  --color-accent-700: #ad3013;
+  --color-accent-800: #8c2916;
+  --color-accent-900: #732517;
+
+  /* Cream — Premium paper feel */
+  --color-cream-50: #fdfbf7;
+  --color-cream-100: #faf6ef;
+  --color-cream-200: #f4ecdc;
+  --color-cream-300: #ebdcc4;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf6;
+  --surface: #ffffff;
+  --foreground: #131a1f;
+  --foreground-muted: #5a6770;
+  --card: #ffffff;
+  --card-foreground: #131a1f;
+  --muted: #f1ede4;
+  --muted-foreground: #6b7480;
+  --border: #e3dccc;
+  --input: #d3ccbb;
+  --ring: #1d7a8c;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0a2730;
+  --surface: #1c505d;
+  --foreground: #faf6ef;
+  --foreground-muted: #b1e3eb;
+  --card: #1c505d;
+  --card-foreground: #faf6ef;
+  --muted: #1c6373;
+  --muted-foreground: #b1e3eb;
+  --border: #1c6373;
+  --input: #1c6373;
+  --ring: #2693a6;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-display {
+  font-family: var(--font-display), "Times New Roman", Georgia, serif;
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.02em;
+}
+
+.bg-cream {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 20% 0%, rgba(29, 122, 140, 0.05) 0, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(230, 85, 44, 0.03) 0, transparent 50%);
+}
+
+.bg-paper {
+  background-color: #faf6ef;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgba(29, 122, 140, 0.012) 35px,
+      rgba(29, 122, 140, 0.012) 70px
+    );
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-700);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-950);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+/* Decorative gold dot divider */
+.divider-gold::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-500);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
 }
