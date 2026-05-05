@@ -11,10 +11,10 @@ type Props = {
 /**
  * PRVS Business logo.
  *
- * Tries to load the real logo from /logo.png (in public/).
+ * Tries to load the real logo from /logo.jpg (in public/).
  * Falls back to an inline SVG approximation if the file is missing.
  */
-export function Logo({ className, src = "/logo.png" }: Props) {
+export function Logo({ className, src = "/logo.jpg" }: Props) {
   const [errored, setErrored] = useState(false);
 
   if (!errored) {
